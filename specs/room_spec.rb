@@ -19,4 +19,20 @@ class TestRoom < MiniTest::Test
   end
 
 
+  def test_get_room_capacity
+
+    assert_equal(20, @room1.capacity)
+
+  end
+
+
+  def test_get_room_songs
+
+    assert_equal([], @room1.songs)
+
+  end
+
+
+
+
 end
