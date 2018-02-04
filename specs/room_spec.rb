@@ -103,6 +103,7 @@ class TestRoom < MiniTest::Test
 
     assert_equal("Sigourney Weaver", @room1.guests[-1].name)
     assert_equal(2, @room1.guests.count())
+    assert_equal("Sorry, room full!", @room1.checkin_guest(@guest2))
 
 
   end
@@ -142,7 +143,7 @@ class TestRoom < MiniTest::Test
     @room1.remove_song(song)
 
     assert_equal(1, @room1.songs.count())
-    assert_equal("Sexy And I Know It", @room1.songs[-1].title)  
+    assert_equal("Sexy And I Know It", @room1.songs[-1].title)
 
   end
 

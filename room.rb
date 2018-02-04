@@ -16,6 +16,8 @@ class Room
 
     if @guests.count < @capacity
       @guests << guest
+    else
+      "Sorry, room full!"
     end
 
   end
