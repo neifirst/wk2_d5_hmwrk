@@ -21,25 +21,11 @@ class Room
   end
 
 
-  # def checkin_guest(guest)
-  #
-  #
-  #   while @guests.length < @capacity
-  #     @guests << guest
-  #   end
-  #
-  #
-  #     # if @guests.count <= @capacity
-  #     #   @guests << guest
-  #     # end
-  #
-  # end
+  def checkout_guest(guest)
 
-  # def checkout_guest(guest)
-  #
-  #   @guests.delete(guest)
-  #
-  # end
+    @guests.delete(guest)
+
+  end
 
 
 

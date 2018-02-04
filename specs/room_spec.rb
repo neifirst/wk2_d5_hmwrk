@@ -55,11 +55,11 @@ class TestRoom < MiniTest::Test
   end
 
 
-  # def test_get_room_songs
-  #
-  #   assert_equal([], @room1.songs)
-  #
-  # end
+  def test_get_room_songs
+
+    assert_equal([], @room1.songs)
+
+  end
 
   def test_check_no_of_guests__0
 
@@ -107,13 +107,19 @@ class TestRoom < MiniTest::Test
 
   end
 
-  # def test_checkout_guest
-  #
-  #   @room1.checkin_guest(@guest1)
-  #   @guests.delete(@guest1)
-  #   assert_equal(nil, @room1.guests[-1])
-  #
-  # end
+  def test_checkout_guest
+
+    guest = @guest1
+    @room1.checkin_guest(guest)
+    guest = @guest3
+    @room1.checkin_guest(guest)
+
+    @room1.checkout_guest(guest)
+
+    assert_equal(1, @room1.guests.count())
+    assert_equal("Jeff Bridges", @room1.guests[-1].name)
+
+  end
 
 
 
