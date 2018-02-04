@@ -2,14 +2,32 @@ require ("pry")
 
 class Room
 
-  attr_reader :guests, :capacity, :songs
+  attr_accessor :guests, :capacity, :songs
 
-  def initialize(guests, capacity, songs)
+  def initialize(capacity)
 
-    @guests = guests
+    @guests = []
     @capacity = capacity
-    @songs = songs
+    @songs = []
 
   end
+
+
+  def checkin_guest(guest)
+
+
+      if @guests.count <= @capacity
+        @guests << guest
+      end
+
+  end
+
+  # def checkout_guest(guest)
+  #
+  #   @guests.delete(guest)
+  #
+  # end
+
+
 
 end

@@ -11,38 +11,12 @@ class TestBar < MiniTest::Test
 
   def setup
 
-    # sexy = Song.new("Sexy And I Know It", "LMFAO")
-    #
-    # rasputin = Song.new("Rasputin", "Boney M")
-    #
-    # gay_bar = Song.new("Gay Bar", "Electric Six")
-    #
-    # baby = Song.new("Baby Got Back", "Sir Mix-A-Lot")
-    #
-    # dont = Song.new("Don't Stop Me Now", "Queen")
-    #
-    # bamba = Song.new("La Bamba", "Richie Valens")
-    #
-    # mplaylist = {
-    #
-    #   playlist1: [
-    #     sexy, rasputin
-    #   ],
-    #
-    #   playlist2: [
-    #     baby, dont
-    #   ],
-    #
-    #   playlist3: [
-    #     bamba, gay_bar
-    #   ]
-    # }
-    #
-    @room1 = Room.new([], 20, mplaylist[:playlist1])
 
-    @room2 = Room.new([], 40, mplaylist[:playlist2])
+    @room1 = Room.new([], 20, [])
 
-    @room3 = Room.new([], 10, mplaylist[:playlist3])
+    @room2 = Room.new([], 40, [])
+
+    @room3 = Room.new([], 2, [])
 
     rooms = [@room1, @room2, @room3]
 
