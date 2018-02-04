@@ -61,12 +61,19 @@ class TestRoom < MiniTest::Test
   #
   # end
 
+  def test_check_no_of_guests__0
+
+    assert_equal(0, @room1.guests.count())
+
+  end
+
   def test_checkin_guest
 
     guest = @guest3
     @room1.checkin_guest(guest)
 
     assert_equal("Sigourney Weaver", @room1.guests[-1].name)
+    assert_equal(1, @room1.guests.count())
 
   end
 
@@ -78,6 +85,7 @@ class TestRoom < MiniTest::Test
     @room1.checkin_guest(guest)
 
     assert_equal("Kevin Bacon", @room1.guests[-1].name)
+    assert_equal(2, @room1.guests.count())
 
 
   end
