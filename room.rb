@@ -33,6 +33,12 @@ class Room
 
   end
 
+  def remove_song(song)
+
+    @songs.delete(song)
+
+  end
+
 
 
 end

@@ -132,6 +132,22 @@ class TestRoom < MiniTest::Test
 
   end
 
+  def test_remove_song
+
+    song = @song1
+    @room1.add_song(song)
+    song = @song3
+    @room1.add_song(song)
+
+    @room1.remove_song(song)
+
+    assert_equal(1, @room1.songs.count())
+    assert_equal("Sexy And I Know It", @room1.songs[-1].title)  
+
+  end
+
+
+
 
 
 
