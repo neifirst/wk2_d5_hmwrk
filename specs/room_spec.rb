@@ -96,12 +96,12 @@ class TestRoom < MiniTest::Test
 
     guest = @guest1
     @room1.checkin_guest(guest)
-    guest = @guest2
-    @room1.checkin_guest(guest)
     guest = @guest3
     @room1.checkin_guest(guest)
+    guest = @guest2
+    @room1.checkin_guest(guest)
 
-    assert_equal("Kevin Bacon", @room1.guests[-1].name)
+    assert_equal("Sigourney Weaver", @room1.guests[-1].name)
     assert_equal(2, @room1.guests.count())
 
 

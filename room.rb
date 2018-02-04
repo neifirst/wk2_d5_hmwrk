@@ -14,10 +14,10 @@ class Room
 
   def checkin_guest(guest)
 
-    if @guests.count < 2
+    if @guests.count < @capacity
       @guests << guest
     end
-    
+
   end
 
 
