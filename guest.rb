@@ -10,6 +10,7 @@ class Guest
     @cash = cash
     @fave_song = fave_song
 
+
   end
 
   def pay_fee(amount)
@@ -21,6 +22,9 @@ class Guest
     end
 
   end
+
+
+
 
 
 end

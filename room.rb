@@ -41,6 +41,18 @@ class Room
 
   end
 
+  def check_song_on_songs(guest)
+
+    if @songs.include?(guest.fave_song)
+      return true
+    else
+      return false
+    end
+
+  end
+
+
+
 
 
 end

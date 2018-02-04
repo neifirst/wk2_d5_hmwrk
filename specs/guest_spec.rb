@@ -26,10 +26,8 @@ class TestGuest < MiniTest::Test
     @song7 = Song.new("My Heart Will Go On", "Celine Dion")
 
 
-
     @guest1 = Guest.new("Jeff Bridges", 50, @song1)
     @guest2 = Guest.new("Shia LeBeouf", 4, @song7)
-
 
 
     @room1 = Room.new(2)
@@ -101,6 +99,9 @@ class TestGuest < MiniTest::Test
     assert_equal("Sexy And I Know It", @guest1.fave_song.title())
 
   end
+
+
+
 
 
 end
