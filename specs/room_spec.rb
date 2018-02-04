@@ -17,20 +17,12 @@ class TestRoom < MiniTest::Test
 
     @song3 = Song.new("Gay Bar", "Electric Six")
 
-    @song4 = Song.new("Baby Got Back", "Sir Mix-A-Lot")
-
-    @song5 = Song.new("Don't Stop Me Now", "Queen")
-
-    @song6 = Song.new("La Bamba", "Richie Valens")
-
-    @song7 = Song.new("My Heart Will Go On", "Celine Dion")
-
-    # @songs = [@song1, @song2, @song3, @song4, @song5, @song6]
+    @song4 = Song.new("My Heart Will Go On", "Celine Dion")
 
 
     @guest1 = Guest.new("Jeff Bridges", 50, @song1)
     @guest2 = Guest.new("Kevin Bacon", 25, @song3)
-    @guest3 = Guest.new("Sigourney Weaver", 100, @song7)
+    @guest3 = Guest.new("Sigourney Weaver", 100, @song4)
 
 
     @room1 = Room.new(2)
