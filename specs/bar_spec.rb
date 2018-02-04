@@ -20,7 +20,12 @@ class TestBar < MiniTest::Test
 
     rooms = [@room1, @room2, @room3]
 
+    @guest1 = Guest.new("Jeff Bridges", 50, @song1)
+    @guest2 = Guest.new("Kevin Bacon", 25, @song3)
+    @guest3 = Guest.new("Sigourney Weaver", 100, @song4)
+
     @bar = Bar.new("Jeff's Happy Karaoke Bar", rooms)
+
 
   end
 
@@ -46,12 +51,20 @@ class TestBar < MiniTest::Test
   def test_add_to_till
 
     amount = 5
+    guest = @guest1
 
-    @bar.add_to_till(amount)
+    @bar.add_to_till(amount, guest)
 
     assert_equal(5, @bar.till())
 
+    assert_equal({"Jeff Bridges"=>5}, @bar.guest_spending)
+
+
   end
+
+
+
+
 
 
 end
