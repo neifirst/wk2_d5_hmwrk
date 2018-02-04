@@ -78,9 +78,10 @@ class TestGuest < MiniTest::Test
   def test_pay_fee_to_bar
 
     amount = 5
+    guest = @guest1
 
     @guest1.pay_fee(amount)
-    @bar.add_to_till(amount)
+    @bar.add_to_till(amount, guest)
 
     assert_equal(45, @guest1.cash())
     assert_equal(5, @bar.till())

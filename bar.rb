@@ -10,6 +10,7 @@ class Bar
     @rooms = rooms
     @till = 0
     @guest_spending = Hash.new{}
+    @guest_list = []
 
   end
 
@@ -21,6 +22,25 @@ class Bar
     @guest_spending[name] = amount
 
   end
+
+
+
+  # # Bah! Corrupt police raid - nearly works!
+
+  # def add_guests_to_list(guest)
+  #
+  #   @guest_list << guest
+  #
+  # end
+
+
+  # def corrupt_police_raid(haul)
+  #
+  #   @till -= haul
+  #   n = Random.new.rand(0..2)
+  #   @guest_list.delete_at(n)
+  #
+  # end
 
 
 

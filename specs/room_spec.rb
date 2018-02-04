@@ -149,7 +149,18 @@ class TestRoom < MiniTest::Test
     song = @song3
     @room1.add_song(song)
 
-    assert_equal(true, @room1.check_song_on_songs(@guest1))
+    assert_equal("We have it!", @room1.check_song_on_songs(@guest1))
+
+  end
+
+  def test_check_song_on_songs__not_there
+
+    song = @song1
+    @room1.add_song(song)
+    song = @song3
+    @room1.add_song(song)
+
+    assert_equal("Nah, that tune sucks!", @room1.check_song_on_songs(@guest3))
 
   end
 

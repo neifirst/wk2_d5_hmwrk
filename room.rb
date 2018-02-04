@@ -44,9 +44,9 @@ class Room
   def check_song_on_songs(guest)
 
     if @songs.include?(guest.fave_song)
-      return true
+      return "We have it!"
     else
-      return false
+      return "Nah, that tune sucks!"
     end
 
   end
