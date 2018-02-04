@@ -23,6 +23,16 @@ class Guest
 
   end
 
+  def check_for_fave(playlist)
+
+    if playlist.include?(@fave_song)
+      return "woo"
+    else
+      return "boo"
+    end
+
+  end
+
 
 
 

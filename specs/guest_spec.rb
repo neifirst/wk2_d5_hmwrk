@@ -101,6 +101,16 @@ class TestGuest < MiniTest::Test
   end
 
 
+  def test_check_for_fave
+
+    playlist = [@song1, @song2, @song3]
+
+    assert_equal("woo", @guest1.check_for_fave(playlist))
+
+  end
+
+
+
 
 
 

@@ -25,7 +25,7 @@ class TestRoom < MiniTest::Test
 
     @song7 = Song.new("My Heart Will Go On", "Celine Dion")
 
-    @songs = [@song1, @song2, @song3, @song4, @song5, @song6]
+    # @songs = [@song1, @song2, @song3, @song4, @song5, @song6]
 
 
     @guest1 = Guest.new("Jeff Bridges", 50, @song1)
