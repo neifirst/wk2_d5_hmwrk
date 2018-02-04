@@ -52,12 +52,13 @@ class TestBar < MiniTest::Test
 
     amount = 5
     guest = @guest1
-
     @bar.add_to_till(amount, guest)
 
-    assert_equal(5, @bar.till())
+    guest = @guest2
+    @bar.add_to_till(amount, guest)
 
-    assert_equal({"Jeff Bridges"=>5}, @bar.guest_spending)
+    assert_equal(10, @bar.till())
+    assert_equal({"Jeff Bridges"=>5, "Kevin Bacon"=>5}, @bar.guest_spending)
 
 
   end

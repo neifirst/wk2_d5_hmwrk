@@ -18,7 +18,6 @@ class Bar
     @till += amount
 
     name = guest.name
-
     @guest_spending[name] = amount
 
   end
