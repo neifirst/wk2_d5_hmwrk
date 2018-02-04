@@ -23,13 +23,15 @@ class TestRoom < MiniTest::Test
 
     @song6 = Song.new("La Bamba", "Richie Valens")
 
-    #
-    # @playlist = [@song1, @song2, @song3, @song4, @song5, @song6]
+    @song7 = Song.new("My Heart Will Go On", "Celine Dion")
 
 
-    @guest1 = Guest.new("Jeff Bridges", 50)
-    @guest2 = Guest.new("Kevin Bacon", 25)
-    @guest3 = Guest.new("Sigourney Weaver", 100)
+    @playlist = [@song1, @song2, @song3, @song4, @song5, @song6]
+
+
+    @guest1 = Guest.new("Jeff Bridges", 50, @song1)
+    @guest2 = Guest.new("Kevin Bacon", 25, @song3)
+    @guest3 = Guest.new("Sigourney Weaver", 100, @song7)
 
 
     @room1 = Room.new(2)
@@ -144,6 +146,12 @@ class TestRoom < MiniTest::Test
 
     assert_equal(1, @room1.songs.count())
     assert_equal("Sexy And I Know It", @room1.songs[-1].title)
+
+  end
+
+  def test_check_song_on_playlist
+
+    assert_equal(true, @playlist.include?(@guest1.fave_song))
 
   end
 

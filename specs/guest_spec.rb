@@ -4,14 +4,33 @@ require("minitest/rg")
 require_relative("../guest.rb")
 require_relative("../bar.rb")
 require_relative("../room.rb")
+require_relative("../song.rb")
 
 
 class TestGuest < MiniTest::Test
 
   def setup
 
-    @guest1 = Guest.new("Jeff Bridges", 50)
-    @guest2 = Guest.new("Shia LeBeouf", 4)
+    @song1 = Song.new("Sexy And I Know It", "LMFAO")
+
+    @song2 = Song.new("Rasputin", "Boney M")
+
+    @song3 = Song.new("Gay Bar", "Electric Six")
+
+    @song4 = Song.new("Baby Got Back", "Sir Mix-A-Lot")
+
+    @song5 = Song.new("Don't Stop Me Now", "Queen")
+
+    @song6 = Song.new("La Bamba", "Richie Valens")
+
+    @song7 = Song.new("My Heart Will Go On", "Celine Dion")
+
+
+
+    @guest1 = Guest.new("Jeff Bridges", 50, @song1)
+    @guest2 = Guest.new("Shia LeBeouf", 4, @song7)
+
+
 
     @room1 = Room.new(2)
 
@@ -20,6 +39,7 @@ class TestGuest < MiniTest::Test
     @room3 = Room.new(20)
 
     rooms = [@room1, @room2, @room3]
+
 
     @bar = Bar.new("Jeff's Happy Karaoke Bar", rooms)
 
@@ -72,6 +92,13 @@ class TestGuest < MiniTest::Test
 
     assert_equal(45, @guest1.cash())
     assert_equal(5, @bar.till())
+
+  end
+
+
+  def test_get_fave_song
+
+    assert_equal("Sexy And I Know It", @guest1.fave_song.title())
 
   end
 
