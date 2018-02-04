@@ -11,18 +11,18 @@ class TestRoom < MiniTest::Test
   def setup
 
 
-    # @song1 = Song.new("Sexy And I Know It", "LMFAO")
-    #
-    # @song2 = Song.new("Rasputin", "Boney M")
-    #
-    # @song3 = Song.new("Gay Bar", "Electric Six")
-    #
-    # @song4 = Song.new("Baby Got Back", "Sir Mix-A-Lot")
-    #
-    # @song5 = Song.new("Don't Stop Me Now", "Queen")
-    #
-    # @song6 = Song.new("La Bamba", "Richie Valens")
-    #
+    @song1 = Song.new("Sexy And I Know It", "LMFAO")
+
+    @song2 = Song.new("Rasputin", "Boney M")
+
+    @song3 = Song.new("Gay Bar", "Electric Six")
+
+    @song4 = Song.new("Baby Got Back", "Sir Mix-A-Lot")
+
+    @song5 = Song.new("Don't Stop Me Now", "Queen")
+
+    @song6 = Song.new("La Bamba", "Richie Valens")
+
     #
     # @playlist = [@song1, @song2, @song3, @song4, @song5, @song6]
 
@@ -118,6 +118,17 @@ class TestRoom < MiniTest::Test
 
     assert_equal(1, @room1.guests.count())
     assert_equal("Jeff Bridges", @room1.guests[-1].name)
+
+  end
+
+  def test_add_song
+
+    song = @song2
+
+    @room1.add_song(song)
+
+    assert_equal("Rasputin", @room1.songs[-1].title)
+    assert_equal(1, @room1.songs.count())
 
   end
 
