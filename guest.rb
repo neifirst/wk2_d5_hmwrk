@@ -13,7 +13,11 @@ class Guest
 
   def pay_fee(amount)
 
-    @cash -= amount
+    if @cash >= amount
+      @cash -= amount
+    else
+      return "You're too poor!"
+    end
 
   end
 

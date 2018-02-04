@@ -11,6 +11,7 @@ class TestGuest < MiniTest::Test
   def setup
 
     @guest1 = Guest.new("Jeff Bridges", 50)
+    @guest2 = Guest.new("Shia LeBeouf", 4)
 
     @room1 = Room.new(2)
 
@@ -32,13 +33,15 @@ class TestGuest < MiniTest::Test
 
   end
 
+
   def test_get_guest_cash
 
     assert_equal(50, @guest1.cash)
 
   end
 
-  def test_pay_fee
+
+  def test_pay_fee__can_pay
 
     amount = 5
 
@@ -47,6 +50,18 @@ class TestGuest < MiniTest::Test
     assert_equal(45, @guest1.cash)
 
   end
+
+
+  def test_pay_fee__cant_pay
+
+    amount = 5
+
+    @guest2.pay_fee(amount)
+
+    assert_equal("You're too poor!", @guest2.pay_fee(amount))
+
+  end
+
 
   def test_pay_fee_to_bar
 
