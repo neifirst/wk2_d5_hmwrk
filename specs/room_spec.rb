@@ -27,9 +27,9 @@ class TestRoom < MiniTest::Test
     # @playlist = [@song1, @song2, @song3, @song4, @song5, @song6]
 
 
-    @guest1 = Guest.new("Jeff Bridges")
-    @guest2 = Guest.new("Kevin Bacon")
-    @guest3 = Guest.new("Sigourney Weaver")
+    @guest1 = Guest.new("Jeff Bridges", 50)
+    @guest2 = Guest.new("Kevin Bacon", 25)
+    @guest3 = Guest.new("Sigourney Weaver", 100)
 
 
     @room1 = Room.new(2)

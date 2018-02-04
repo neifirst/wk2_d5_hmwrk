@@ -12,11 +12,11 @@ class TestBar < MiniTest::Test
   def setup
 
 
-    @room1 = Room.new([], 20, [])
+    @room1 = Room.new(2)
 
-    @room2 = Room.new([], 40, [])
+    @room2 = Room.new(40)
 
-    @room3 = Room.new([], 2, [])
+    @room3 = Room.new(20)
 
     rooms = [@room1, @room2, @room3]
 
@@ -37,13 +37,21 @@ class TestBar < MiniTest::Test
 
   end
 
-  def test_add_guest
+  def test_get_till
 
-    guest_name = "Jeff Bridges"
-    room_number = 1
-
-    assert_equal("Jeff Bridges", @room1.guests())
+    assert_equal(0, @bar.till())
 
   end
 
+  def test_add_to_till
+
+    amount = 5
+
+    @bar.add_to_till(amount)
+
+    assert_equal(5, @bar.till())
+
   end
+
+
+end
