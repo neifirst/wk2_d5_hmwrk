@@ -64,36 +64,21 @@ class TestBar < MiniTest::Test
   end
 
 
-  # # Bah! Corrupt police raid - nearly works!
 
+  def test_corrupt_police_raid
 
-  # def test_add_guests_to_list
-  #
-  #   guest = @guest1
-  #   @bar.add_guests_to_list(guest)
-  #
-  #   assert_equal(1, @guest_list.count)
-  #
-  # end
+    @bar.guest_list = [@guest1, @guest2, @guest3]
 
+    guest = @guest2
+    amount = 10000
 
-  # def test_corrupt_police_raid
-  #
-  #   @guest_list = [@guest1, @guest2, @guest3]
-  #
-  #   guest = @guest2
-  #   amount = 10000
-  #
-  #   @bar.add_to_till(amount, guest)
-  #
-  #   haul = 9000
-  #
-  #   @bar.corrupt_police_raid(haul)
-  #
-  #   assert_equal(1000, @bar.till)
-  #   assert_equal(2, @guest_list.count)
-  #
-  # end
+    @bar.add_to_till(amount, guest)
+    @bar.corrupt_police_raid()
+
+    assert_includes((1000..9000), @bar.till)
+    assert_equal(2, @bar.guest_list.count)
+
+  end
 
 
 

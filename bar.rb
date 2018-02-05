@@ -2,7 +2,7 @@ require ("pry")
 
 class Bar
 
-  attr_reader :name, :rooms, :till, :guest_spending
+  attr_accessor :name, :rooms, :till, :guest_spending, :guest_list
 
   def initialize(name, rooms)
 
@@ -25,22 +25,14 @@ class Bar
 
 
 
-  # # Bah! Corrupt police raid - nearly works!
+  def corrupt_police_raid()
 
-  # def add_guests_to_list(guest)
-  #
-  #   @guest_list << guest
-  #
-  # end
+    x = Random.new.rand(1000..9000)
+    @till -= x
+    n = Random.new.rand(0..@guest_list.length)
+    @guest_list.delete_at(n)
 
-
-  # def corrupt_police_raid(haul)
-  #
-  #   @till -= haul
-  #   n = Random.new.rand(0..2)
-  #   @guest_list.delete_at(n)
-  #
-  # end
+  end
 
 
 
